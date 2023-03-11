@@ -27,6 +27,3 @@ async function loginUser(event) {
     }
 }
 
-if (result.status === 200) {
-    console.log(`Token: ${result.data}`)
-}

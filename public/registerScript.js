@@ -1,4 +1,5 @@
 const regForm = document.getElementById('registrationForm')
+const url = 'http://localhost:5000/login.html';
 
 regForm.addEventListener('submit', registerUser)
 
@@ -23,8 +24,7 @@ async function registerUser(event) {
     if (result.status !== 200) {
         alert(result.error)
     } else {
-        console.log(result)
-        alert('Success')
+        window.location.assign(url)
     }
     
 }
