@@ -107,3 +107,15 @@ body {
 :focus::placeholder {
     color:#B1A7A6;
 }
+
+@media (max-height: 450px) {
+    body {
+        overflow-y:visible;
+    }
+}
+
+@media (max-height: 300px) {
+    .container {
+        margin-top: 150px;
+    }
+}
