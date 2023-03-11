@@ -9,19 +9,19 @@
     <title>Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="loginForm">
-        <div class="formControl">
-            <input type="email" name="email" autocomplete="off" id="email">
-            <label for="email">Email</label>
-        </div>
-        <div class="formControl">
-            <input type="password" name="password" id="password">
-            <label for="password">Password</label>
-        </div>
-        <div class="formControl">
-            <input type="submit" id="loginButton" value="Login">
-        </div>
-    </form>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <div class="formControl">
+                <input type="email" name="email" autocomplete="off" id="email" placeholder="Email">
+            </div>
+            <div class="formControl">
+                <input type="password" name="password" id="password" placeholder="Password">
+            </div>
+            <input type="submit" class="button" id="loginButton" value="Login">
+            <p class="link">Don't have an account? <a href="./register.html">Register Here</a> </p>
+        </form>
+    </div>
+    <script src="loginScript.js"></script>
 </body>
 </html>
