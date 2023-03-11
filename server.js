@@ -17,6 +17,30 @@ app.use('/', express.static('./public'))
 //app.use('/', express.static('./images'))
 
 // Requests
+app.post('/api/login', async(req, res) => {
+    const {email, password} = req.body
+    const user = await User.findOne({email}).lean()
+
+    if(!user) {
+        return res.status(400).json({status:400, error:'Invalid Username'})
+    }
+
+    const payload = {
+        id: user._id,
+        email: user.email,
+        username: user.username
+
+    }
+
+    if (await bcrypt.compare(req.body.password, user.password)) {
+        const token = jwt.sign(payload, process.env.JWT_SECRET)
+        console.log(token)
+        return res.status(200).json({status: 200, data: token})
+    } else {
+        res.status(400).json({status: 400, error: 'Invalid Password'})
+    }
+})
+
 app.post('/api/register', async (req, res) => {
     const {email, username, password} = req.body
     if (!email || typeof email !== 'string') {
