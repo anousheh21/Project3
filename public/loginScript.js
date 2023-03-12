@@ -1,4 +1,5 @@
 const loginForm = document.getElementById('loginForm')
+const errmsg = document.querySelector('.errmsg')
 
 loginForm.addEventListener('submit', loginUser)
 
@@ -21,9 +22,8 @@ async function loginUser(event) {
     if (result.status === 200) {
         console.log(`Token: ${result.data}`)
         localStorage.setItem('token', result.data)
-        alert('Success')
     } else {
-        alert(result.error)
+        errmsg.textContent = result.error
     }
 }
 

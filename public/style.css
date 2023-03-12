@@ -38,6 +38,11 @@ body {
     color: #B1A7A6;
 }
 
+.errmsg {
+    color: #D3D3D3;
+    text-align: center;
+}
+
 .button {
     cursor: pointer;
     display: inline-block;

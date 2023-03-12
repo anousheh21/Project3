@@ -34,7 +34,7 @@ app.post('/api/login', async(req, res) => {
 
     if (await bcrypt.compare(req.body.password, user.password)) {
         const token = jwt.sign(payload, process.env.JWT_SECRET)
-        console.log(token)
+        // console.log(token)
         return res.status(200).json({status: 200, data: token})
     } else {
         res.status(400).json({status: 400, error: 'Invalid Password'})
@@ -63,7 +63,7 @@ app.post('/api/register', async (req, res) => {
             password: hashedPassword
         })
         res.status(200).json({status:200})
-        console.log(response)
+        // console.log(response)
     } catch (error) {
         console.log(JSON.stringify(error))
         if (error.code === 11000) {
